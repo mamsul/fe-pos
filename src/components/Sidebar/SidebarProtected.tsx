@@ -18,7 +18,7 @@ export default function SidebarProtected() {
   return (
     <aside
       className={cn(
-        'relative h-full transform bg-white px-5 pt-8 transition-all duration-300',
+        'relative z-20 h-full transform bg-white px-5 pt-8 transition-all duration-300',
         smallSide ? 'w-[5.5rem]' : 'w-2/12',
       )}>
       <AppTitle />

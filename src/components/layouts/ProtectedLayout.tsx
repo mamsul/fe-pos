@@ -14,7 +14,7 @@ export default function ProtectedLayout() {
     <div className="flex h-screen bg-blue-50">
       <SidebarProtected />
 
-      <div className="h-full w-full px-10 pt-20">{outlet}</div>
+      <div className="h-screen w-full overflow-auto">{outlet}</div>
     </div>
   );
 }

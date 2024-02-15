@@ -1,7 +1,6 @@
 import {
   BookUser,
   LayoutDashboard,
-  LucideIcon,
   Package,
   SettingsIcon,
   ShoppingBasket,
@@ -13,13 +12,6 @@ import Product from '../pages/Product';
 import Register from '../pages/Register';
 import Settings from '../pages/Settings';
 import Users from '../pages/Users';
-
-interface IRoute {
-  name: string;
-  path: string;
-  element: () => JSX.Element;
-  icon?: LucideIcon;
-}
 
 export const publicRoute: IRoute[] = [
   {
