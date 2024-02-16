@@ -3,6 +3,11 @@ import ContentTitle from '../../components/Dashboard/ContentTitle';
 import HeaderProtected from '../../components/Header/HeaderProtected';
 import DashboardWrapper from '../../components/Wrapper/DashboardWrapper';
 import { cn } from '../../lib/utils';
+import BestSelling from './components/BestSelling';
+import DailySales from './components/DailySales';
+import EmployeeEarnings from './components/EmployeeEarnings';
+import TotalIncome from './components/TotalIncome';
+import TotalOrderAndCustomer from './components/TotalOrderAndCustomer';
 
 const dashboardFilters: string[] = [
   'Yesterday',
@@ -43,7 +48,7 @@ export default function Dashboard() {
         <div className="mt-10 grid grid-cols-2 gap-12">
           {/* Daily Sales */}
           <div className="h-[25rem] w-full rounded-3xl bg-white p-5">
-            <h2 className="font-medium">Daily Sales</h2>
+            <DailySales />
           </div>
 
           {/* Total Income */}
@@ -52,14 +57,22 @@ export default function Dashboard() {
           <div className="h-[25rem] w-full rounded-3xl bg-transparent">
             <div className="flex h-full w-full gap-12">
               <div className="h-full w-1/2 rounded-3xl bg-white p-5">
-                <h2 className="font-medium">Total Income</h2>
+                <TotalIncome />
               </div>
               <div className="flex h-full w-1/2 flex-col gap-12">
                 <div className="h-full w-full rounded-3xl bg-white p-5">
-                  <h2 className="font-medium">Total Orders</h2>
+                  <TotalOrderAndCustomer
+                    label="Total Order"
+                    value="2400"
+                    linkTo="/dashboard/order"
+                  />
                 </div>
                 <div className="h-full w-full rounded-3xl bg-white p-5">
-                  <h2 className="font-medium">New Customers</h2>
+                  <TotalOrderAndCustomer
+                    label="New Customers"
+                    value="650"
+                    linkTo="/dashboard/users"
+                  />
                 </div>
               </div>
             </div>
@@ -67,12 +80,12 @@ export default function Dashboard() {
 
           {/* Best Selling Products */}
           <div className="h-[25rem] w-full rounded-3xl bg-white p-5">
-            <h2 className="font-medium">Best Selling Products</h2>
+            <BestSelling />
           </div>
 
           {/* Employee Earnings */}
           <div className="h-[25rem] w-full rounded-3xl bg-white p-5">
-            <h2 className="font-medium">Employee Earnings</h2>
+            <EmployeeEarnings />
           </div>
         </div>
       </DashboardWrapper>
