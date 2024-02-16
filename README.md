@@ -1,6 +1,6 @@
 # POS - Point of Sales
 
-Frontend side of POS Application. Build with React.js using CRA and PWA setup template from react community, and also implement typescript for type savety code.
+Frontend side of POS Application. Build with React.js using CRA and PWA setup template from react community, and also implement typescript for type safety code.
 
 ## Technology Used:
 
