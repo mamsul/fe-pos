@@ -19,6 +19,8 @@ export default function Dashboard() {
     <>
       <HeaderProtected />
 
+      {/* Title */}
+      {/* Filter Options */}
       <DashboardWrapper>
         <div className="flex items-end justify-between">
           <ContentTitle label="Dashboard" />
@@ -39,9 +41,14 @@ export default function Dashboard() {
         </div>
 
         <div className="mt-10 grid grid-cols-2 gap-12">
+          {/* Daily Sales */}
           <div className="h-[25rem] w-full rounded-3xl bg-white p-5">
             <h2 className="font-medium">Daily Sales</h2>
           </div>
+
+          {/* Total Income */}
+          {/* Total Orders */}
+          {/* New Customers */}
           <div className="h-[25rem] w-full rounded-3xl bg-transparent">
             <div className="flex h-full w-full gap-12">
               <div className="h-full w-1/2 rounded-3xl bg-white p-5">
@@ -57,9 +64,13 @@ export default function Dashboard() {
               </div>
             </div>
           </div>
+
+          {/* Best Selling Products */}
           <div className="h-[25rem] w-full rounded-3xl bg-white p-5">
             <h2 className="font-medium">Best Selling Products</h2>
           </div>
+
+          {/* Employee Earnings */}
           <div className="h-[25rem] w-full rounded-3xl bg-white p-5">
             <h2 className="font-medium">Employee Earnings</h2>
           </div>
