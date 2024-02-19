@@ -3,7 +3,7 @@ import { cn } from '../../lib/utils';
 import { protectedRoute } from '../../routes';
 
 type SidebarProtectedMenuProps = {
-  isMinimize: boolean;
+  isMinimize?: boolean;
 };
 
 export default function SidebarProtectedMenu({
@@ -19,7 +19,7 @@ export default function SidebarProtectedMenu({
           <Link
             to={route.path}
             className={cn(
-              'inline-flex w-full items-center rounded-lg p-3',
+              'inline-flex w-full items-center rounded-lg p-3 text-sm md:text-base',
               activePath === route.path
                 ? 'bg-blue-50 text-blue-700'
                 : 'text-gray-500',

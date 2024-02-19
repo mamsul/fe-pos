@@ -5,9 +5,9 @@ const RowItem = ({ product, count }: { product: IProduct; count: number }) => {
         <span className="w-max rounded-lg bg-blue-400 p-1 text-[0.65rem] text-white">
           {product.category}
         </span>
-        <span className="text-sm font-medium">{product.name}</span>
+        <span className="text-xs font-medium md:text-sm">{product.name}</span>
       </div>
-      <span className="font-medium">{count}</span>
+      <span className="text-sm font-medium md:text-base">{count}</span>
     </div>
   );
 };

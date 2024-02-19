@@ -20,8 +20,8 @@ export default function TotalOrderAndCustomer({
         </Link>
       </div>
 
-      <div className="flex h-24 items-center">
-        <span className="text-5xl font-bold">{value}</span>
+      <div className="flex h-[70%] items-center lg:h-[40%] xl:h-[80%]">
+        <span className="text-2xl font-bold xl:text-5xl">{value}</span>
       </div>
     </>
   );

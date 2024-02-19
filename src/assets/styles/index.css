@@ -8,3 +8,38 @@
     font-family: 'Inter';
   }
 }
+
+@layer utilities {
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  /* Hide scrollbar for IE, Edge and Firefox */
+  .no-scrollbar {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+}
+
+/* SCROLLBAR ADJUSTMENT */
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #cdc8c8 #ffffff;
+}
+
+/* Scrollbar for Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 7px;
+  height: 3px;
+}
+
+*::-webkit-scrollbar-track {
+  background: #ffffff;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: rgb(166, 165, 159);
+  border-radius: 20px;
+  border: 1px solid rgb(166, 165, 159);
+}

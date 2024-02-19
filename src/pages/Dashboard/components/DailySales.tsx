@@ -30,7 +30,7 @@ export default function DailySales() {
   return (
     <div>
       <h2 className="mb-5 font-medium">Daily Sales</h2>
-      <div>
+      <div className="flex h-[10rem] justify-center md:h-[15rem] lg:h-[19rem] xl:h-[17rem]">
         <LineChart data={data} />
       </div>
     </div>

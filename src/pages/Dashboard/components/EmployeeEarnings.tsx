@@ -7,9 +7,9 @@ const RowItem = ({ name, earn }: { name: string; earn: number }) => {
         <span className="w-max rounded-lg bg-red-300 p-1 text-[0.65rem] text-white">
           Cashier
         </span>
-        <span className="text-sm font-medium">{name}</span>
+        <span className="text-xs font-medium md:text-sm">{name}</span>
       </div>
-      <span className="font-medium">{rupiah(earn)}</span>
+      <span className="text-sm font-medium md:text-base">{rupiah(earn)}</span>
     </div>
   );
 };

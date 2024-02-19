@@ -1,3 +1,4 @@
+import ContentTitle from '../../components/Dashboard/ContentTitle';
 import HeaderProtected from '../../components/Header/HeaderProtected';
 import DashboardWrapper from '../../components/Wrapper/DashboardWrapper';
 
@@ -6,7 +7,7 @@ export default function Users() {
     <>
       <HeaderProtected />
       <DashboardWrapper>
-        <h1 className="text-4xl font-bold">Users</h1>
+        <ContentTitle label="Users" />
       </DashboardWrapper>
     </>
   );

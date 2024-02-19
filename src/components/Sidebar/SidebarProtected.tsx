@@ -13,24 +13,24 @@ export default function SidebarProtected() {
     logout();
   };
 
-  const [smallSide, setSmallSide] = useState<boolean>(false);
+  const [isMinimize, setMinimize] = useState<boolean>(false);
 
   return (
     <aside
       className={cn(
-        'relative z-20 h-full transform bg-white px-5 pt-8 transition-all duration-300',
-        smallSide ? 'w-[5.5rem]' : 'w-2/12',
+        'relative z-20 hidden h-full transform bg-white px-5 pt-8 transition-all duration-300 lg:block',
+        isMinimize ? 'w-[5.5rem]' : 'w-2/12',
       )}>
       <AppTitle />
 
       <SidebarMinimizeBtn
-        handleClick={() => setSmallSide(!smallSide)}
-        isMinimize={smallSide}
+        handleClick={() => setMinimize(!isMinimize)}
+        isMinimize={isMinimize}
       />
 
-      <SidebarProtectedMenu isMinimize={smallSide} />
+      <SidebarProtectedMenu isMinimize={isMinimize} />
 
-      <SidebarSignoutBtn isMinimize={smallSide} handleClick={handleLogout} />
+      <SidebarSignoutBtn isMinimize={isMinimize} handleClick={handleLogout} />
     </aside>
   );
 }

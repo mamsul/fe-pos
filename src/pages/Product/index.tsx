@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Button } from '../../components/Button';
+import ContentTitle from '../../components/Dashboard/ContentTitle';
 import HeaderProtected from '../../components/Header/HeaderProtected';
 import DashboardWrapper from '../../components/Wrapper/DashboardWrapper';
 import { cn } from '../../lib/utils';
@@ -17,9 +18,9 @@ export default function Product() {
     <>
       <HeaderProtected
         navigation={
-          <ul className="flex h-full w-full items-center">
+          <ul className="flex h-full w-max items-center overflow-auto">
             {productTabs.map((tab) => (
-              <li key={tab} className="h-full">
+              <li key={tab} className="h-full w-max text-xs lg:text-sm">
                 <Button
                   onClick={() => setActiveTab(tab)}
                   className={cn(
@@ -37,7 +38,7 @@ export default function Product() {
       />
 
       <DashboardWrapper>
-        <h1 className="text-4xl font-bold">Product</h1>
+        <ContentTitle label="Product" />
       </DashboardWrapper>
     </>
   );

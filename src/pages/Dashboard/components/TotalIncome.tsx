@@ -20,7 +20,6 @@ const data = {
 
 export default function TotalIncome() {
   const chartOptions: ChartOptions<'doughnut'> = {
-    cutout: 90,
     plugins: {
       legend: {
         display: false,
@@ -31,11 +30,11 @@ export default function TotalIncome() {
   return (
     <div>
       <h2 className="font-mediu mb-2">Total Income</h2>
-      <span className="mb-5 block truncate text-2xl font-bold">
+      <span className="mb-5 block truncate text-xl font-bold md:text-2xl">
         {rupiah(25250000)}
       </span>
 
-      <div className="p-2">
+      <div className="flex h-[10rem] justify-center md:h-[12rem] lg:h-[17rem] xl:h-[15rem]">
         <DoughnutChart data={data} options={chartOptions} />
       </div>
     </div>

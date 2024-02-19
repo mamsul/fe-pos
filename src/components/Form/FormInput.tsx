@@ -10,7 +10,7 @@ const FormInput = React.forwardRef<HTMLInputElement, InputFieldProps>(
       <input
         type={type}
         className={cn(
-          'h-10 w-full rounded-lg border bg-white px-4 text-sm outline-none transition-all duration-300 focus:border-gray-700 sm:text-base lg:h-12 xl:h-14',
+          'h-10 w-full rounded-lg border bg-white px-4 text-sm outline-none transition-all duration-300 focus:border-gray-700 sm:text-base md:h-12 xl:h-14',
           className,
         )}
         ref={ref}

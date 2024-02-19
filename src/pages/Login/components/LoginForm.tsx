@@ -32,7 +32,7 @@ export default function LoginForm() {
         onChange={(e) => setPassword(e.target.value)}
       />
       <div className="pt-7">
-        <Button type="submit" variant="highlight" className="h-14">
+        <Button type="submit" variant="highlight" className="h-11 md:h-14">
           Sign In
         </Button>
       </div>

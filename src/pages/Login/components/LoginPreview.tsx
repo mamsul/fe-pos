@@ -1,12 +1,13 @@
-import { LoginPreview1 } from '../../../assets';
+import { LoginPreviewAnimation } from '../../../assets';
 
 export default function LoginPreview() {
   return (
-    <>
-      <img src={LoginPreview1} alt="login preview 1" className="max-w-md" />
-      <h2 className="mt-20 text-2xl font-medium text-gray-800">
-        Optimize your business
-      </h2>
-    </>
+    <div className="mx-auto h-auto w-[90%] lg:w-[65%]">
+      <img
+        src={LoginPreviewAnimation}
+        alt="login preview 1"
+        className="h-full w-full"
+      />
+    </div>
   );
 }
