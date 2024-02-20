@@ -1,3 +1,4 @@
+import { AnimatePresence } from 'framer-motion';
 import React from 'react';
 import { Route, Routes } from 'react-router';
 import NotFoundPage from './components/NotFoundPage';
@@ -16,28 +17,30 @@ function App() {
       {offlineStatus && <OfflineAlert />}
 
       <AuthProvider>
-        <Routes>
-          <Route element={<PublicLayout />}>
-            {publicRoute.map((item) => (
-              <Route
-                key={item.path}
-                path={item.path}
-                element={<item.element />}
-              />
-            ))}
-          </Route>
-          <Route path="/dashboard" element={<ProtectedLayout />}>
-            {protectedRoute.map((item) => (
-              <Route
-                key={item.path}
-                path={item.path}
-                element={<item.element />}
-              />
-            ))}
-          </Route>
+        <AnimatePresence mode="wait">
+          <Routes>
+            <Route element={<PublicLayout />}>
+              {publicRoute.map((item) => (
+                <Route
+                  key={item.path}
+                  path={item.path}
+                  element={<item.element />}
+                />
+              ))}
+            </Route>
+            <Route path="/dashboard" element={<ProtectedLayout />}>
+              {protectedRoute.map((item) => (
+                <Route
+                  key={item.path}
+                  path={item.path}
+                  element={<item.element />}
+                />
+              ))}
+            </Route>
 
-          <Route path="*" element={<NotFoundPage />} />
-        </Routes>
+            <Route path="*" element={<NotFoundPage />} />
+          </Routes>
+        </AnimatePresence>
       </AuthProvider>
     </React.Fragment>
   );
