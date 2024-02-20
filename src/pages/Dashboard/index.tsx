@@ -33,6 +33,7 @@ export default function Dashboard() {
           <ul className="mt-4 flex items-center gap-2 border-b lg:mt-0">
             {dashboardFilters.map((filter) => (
               <button
+                key={filter}
                 className={cn(
                   'h-full w-20 py-2 text-sm transition-all duration-200 hover:border-b-2 hover:border-yellow-500',
                   activeFilter === filter

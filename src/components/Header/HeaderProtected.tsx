@@ -9,7 +9,7 @@ export default function HeaderProtected({ navigation }: HeaderProtectedProps) {
   const { handleSidebar, showSidebar } = referenceStore();
 
   return (
-    <div className="sticky top-0 h-10 w-full bg-white px-5 lg:h-12 lg:px-10">
+    <div className="sticky top-0 z-10 h-10 w-full border-b bg-white px-4 lg:h-12 lg:px-10">
       <div className="flex h-full w-full items-center justify-between">
         <div className="flex h-full w-10/12">
           <div className="flex w-1/12 items-center lg:w-0">
