@@ -1,8 +1,12 @@
 import { PosLogo } from '../assets';
 
-export default function AppTitle() {
+type AppTitleProps = {
+  showText?: boolean;
+};
+
+export default function AppTitle({ showText = true }: AppTitleProps) {
   return (
-    <div className="flex items-center gap-3 overflow-hidden">
+    <div className="flex items-center gap-3">
       <div className="w-7 lg:w-12">
         <img
           src={PosLogo}
@@ -13,7 +17,9 @@ export default function AppTitle() {
           loading="eager"
         />
       </div>
-      <span className="text-base font-extrabold lg:text-2xl">POS.</span>
+      {showText && (
+        <span className="text-base font-extrabold lg:text-2xl">POS.</span>
+      )}
     </div>
   );
 }
