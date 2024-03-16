@@ -3,14 +3,7 @@
   "extends": ["prettier"],
   "rules": {
     "prettier/prettier": "off",
-    "prefer-const": "error",
-    "@typescript-eslint/no-unused-vars": [
-      "error",
-      {
-        "varsIgnorePattern": "^_",
-        "argsIgnorePattern": "^_"
-      }
-    ]
+    "prefer-const": "error"
   },
   "overrides": [
     {
@@ -21,8 +14,6 @@
         "@typescript-eslint/explicit-function-return-type": "off",
         "@typescript-eslint/explicit-module-boundary-types": "off",
         "no-use-before-define": [0],
-        "@typescript-eslint/no-use-before-define": [1],
-        "@typescript-eslint/no-explicit-any": [1],
         "@typescript-eslint/no-var-requires": "off"
       }
     }
