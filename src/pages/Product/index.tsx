@@ -1,36 +1,35 @@
-import { useState } from 'react';
-import { Button } from '../../components/Button';
+import { NavLink, Outlet } from 'react-router-dom';
 import ContentTitle from '../../components/Dashboard/ContentTitle';
 import HeaderProtected from '../../components/Header/HeaderProtected';
 import DashboardWrapper from '../../components/Wrapper/DashboardWrapper';
 import { cn } from '../../lib/utils';
 
-const productTabs: string[] = [
-  'Manage Product',
-  'Manage Category',
-  'Manage Add Ons',
-];
+const productTabs: string[] = ['Manage Product', 'Manage Category'];
 
-export default function Product() {
-  const [activeTab, setActiveTab] = useState<string>('Manage Product');
+type ProductProps = {
+  childRoute: IRoute[];
+};
 
+export default function Product({ childRoute }: ProductProps) {
   return (
     <>
       <HeaderProtected
         navigation={
           <ul className="flex h-full w-max items-center overflow-auto">
-            {productTabs.map((tab) => (
-              <li key={tab} className="h-full w-max text-xs lg:text-sm">
-                <Button
-                  onClick={() => setActiveTab(tab)}
-                  className={cn(
-                    'h-full rounded-none border-none px-4',
-                    activeTab === tab
-                      ? 'bg-blue-500 font-medium text-white'
-                      : 'text-gray-800',
-                  )}>
-                  {tab}
-                </Button>
+            {childRoute.map((route) => (
+              <li key={route.path} className="h-full w-max">
+                <NavLink
+                  to={route.path}
+                  className={({ isActive }) => {
+                    return cn(
+                      'flex h-full items-center px-4',
+                      isActive
+                        ? 'bg-blue-500 font-medium text-white'
+                        : 'text-gray-800',
+                    );
+                  }}>
+                  <span className="text-xs lg:text-sm">{route.name}</span>
+                </NavLink>
               </li>
             ))}
           </ul>
@@ -39,6 +38,10 @@ export default function Product() {
 
       <DashboardWrapper>
         <ContentTitle label="Product" />
+
+        <section className="mt-4 border-t border-gray-200 pt-5">
+          <Outlet />
+        </section>
       </DashboardWrapper>
     </>
   );

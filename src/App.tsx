@@ -33,8 +33,18 @@ function App() {
                 <Route
                   key={item.path}
                   path={item.path}
-                  element={<item.element />}
-                />
+                  element={React.createElement(item.element, {
+                    childRoute: item.children,
+                  })}>
+                  {item.children &&
+                    item.children.map((childRoute) => (
+                      <Route
+                        key={childRoute.path}
+                        path={childRoute.path}
+                        element={<childRoute.element />}
+                      />
+                    ))}
+                </Route>
               ))}
             </Route>
 

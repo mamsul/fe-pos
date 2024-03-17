@@ -1,6 +1,10 @@
 interface IRoute {
-  name: string;
   path: string;
-  element: () => JSX.Element;
+  name: string;
   icon?: LucideIcon;
+  element: () => JSX.Element;
+}
+
+interface IPageRoute extends Pick<IRoute, keyof IRoute> {
+  children?: Pick<IRoute, 'path' | 'name' | 'element'>[];
 }

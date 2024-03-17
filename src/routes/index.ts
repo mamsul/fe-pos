@@ -9,24 +9,20 @@ import Dashboard from '../pages/Dashboard';
 import Login from '../pages/Login';
 import Order from '../pages/Order';
 import Product from '../pages/Product';
-import Register from '../pages/Register';
+import ManageCategory from '../pages/Product/ManageCategory';
 import Settings from '../pages/Settings';
+import ManageMenu from '../pages/Settings/ManageMenu';
 import Users from '../pages/Users';
 
-export const publicRoute: IRoute[] = [
+export const publicRoute = [
   {
     name: 'Login',
     path: '/',
     element: Login,
   },
-  {
-    name: 'Register',
-    path: '/register',
-    element: Register,
-  },
-];
+] as IPageRoute[];
 
-export const protectedRoute: IRoute[] = [
+export const protectedRoute = [
   {
     name: 'Dashboard',
     path: '/dashboard',
@@ -50,11 +46,25 @@ export const protectedRoute: IRoute[] = [
     path: '/dashboard/product',
     element: Product,
     icon: Package,
+    children: [
+      {
+        name: 'Manage Category',
+        path: '/dashboard/product/manage-category',
+        element: ManageCategory,
+      },
+    ],
   },
   {
     name: 'Settings',
     path: '/dashboard/settings',
     element: Settings,
     icon: SettingsIcon,
+    children: [
+      {
+        name: 'Manage Menu',
+        path: '/dashboard/settings/manage-menu',
+        element: ManageMenu,
+      },
+    ],
   },
-];
+] as IPageRoute[];

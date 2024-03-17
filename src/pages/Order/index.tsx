@@ -6,7 +6,6 @@ import HeaderProtected from '../../components/Header/HeaderProtected';
 import DashboardWrapper from '../../components/Wrapper/DashboardWrapper';
 import { cn } from '../../lib/utils';
 import OrderDetails from './components/OrderDetails/index';
-import OrderNavigation from './components/OrderNavigations';
 import OrderProductList from './components/OrderProductList';
 
 export default function Order() {
@@ -14,7 +13,7 @@ export default function Order() {
 
   return (
     <>
-      <HeaderProtected navigation={<OrderNavigation />} />
+      <HeaderProtected />
 
       <DashboardWrapper>
         <ContentTitle label="Order" />
