@@ -4,10 +4,14 @@
   "editor.formatOnSave": true,
   "editor.formatOnPaste": true,
   "[typescript]": {
-    "editor.codeActionsOnSave": { "source.organizeImports": true }
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": "explicit"
+    }
   },
   "[typescriptreact]": {
-    "editor.codeActionsOnSave": { "source.organizeImports": true }
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": "explicit"
+    }
   },
   "[typescript][typescriptreact]": {
     "editor.codeActionsOnSave": {
