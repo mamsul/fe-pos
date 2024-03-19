@@ -1,24 +1,53 @@
-import { useState } from 'react';
+import { AxiosError } from 'axios';
+import { AlertCircle } from 'lucide-react';
+import { FormEvent, useState } from 'react';
+import { useMutation } from 'react-query';
 import { Button } from '../../../components/Button';
 import { FormInput } from '../../../components/Form/FormInput';
 import { useAuth } from '../../../hooks/useAuth';
+import { signinAdmin } from '../../../services/authService';
 
 export default function LoginForm() {
+  const mutation = useMutation({ mutationFn: signinAdmin });
+  const { handleAuthData } = useAuth();
+
   const [email, setEmail] = useState<string>('');
   const [password, setPassword] = useState<string>('');
-  const { login } = useAuth();
+  const [error, setError] = useState<string | null>(null);
 
-  const handleLogin = async (e: any) => {
+  const handleSignin = (e: FormEvent) => {
+    setError(null);
     e.preventDefault();
-    if (email === 'user@gmail.com' && password === 'password') {
-      await login({ email, password });
-    } else {
-      alert('Invalid email or password');
-    }
+    const form = e.target as HTMLFormElement;
+    const payload = {
+      email,
+      password,
+    } as ILogin;
+
+    mutation.mutate(payload, {
+      onSuccess(res) {
+        form.reset();
+        handleAuthData(res.data);
+      },
+      onError(err) {
+        if (err instanceof AxiosError) {
+          setError(err.response?.data?.message);
+        } else {
+          setError('Something wrong');
+        }
+      },
+    });
   };
 
   return (
-    <form onSubmit={handleLogin} className="flex flex-col gap-6">
+    <form onSubmit={handleSignin} className="flex flex-col gap-6">
+      {error && (
+        <div className="flex items-center rounded-lg bg-red-300 p-3 text-white">
+          <AlertCircle className="me-2 h-4 w-4 " />
+          <span className="text-sm">{error}!</span>
+        </div>
+      )}
+
       <FormInput
         placeholder="Type your email: user@gmail.com"
         type="email"
