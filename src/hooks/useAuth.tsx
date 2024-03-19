@@ -1,10 +1,11 @@
 import { createContext, useContext, useMemo } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { removeToken, setToken } from '../lib/utils';
 import { useLocalStorage } from './useLocalStorage';
 
 interface IAuthContext {
-  user: ILogin | null;
-  login: (data: ILogin) => void;
+  user: IUser | null;
+  handleAuthData: (data: IUser) => void;
   logout: () => void;
 }
 
@@ -14,20 +15,25 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
   const [user, setUser] = useLocalStorage('user', null);
   const navigate = useNavigate();
 
-  const login = async (data: ILogin) => {
-    setUser(data);
+  const handleAuthData = async (data: IUser) => {
+    setToken({
+      accessToken: data.accessToken,
+      refreshToken: data.refreshToken,
+    });
+    setUser({ name: data.name, email: data.email, roleId: data.roleId });
     navigate('/dashboard');
   };
 
   const logout = () => {
     setUser(null);
+    removeToken();
     navigate('/', { replace: true });
   };
 
   const value = useMemo<IAuthContext>(
     () => ({
       user,
-      login,
+      handleAuthData,
       logout,
     }),
     [user],
