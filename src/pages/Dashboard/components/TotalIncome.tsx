@@ -1,5 +1,5 @@
 import { ChartOptions } from 'chart.js';
-import DoughnutChart from '../../../components/Chart/DoughnutChart';
+import DoughnutChart from '../../../components/ui/chart/DoughnutChart';
 import { rupiah } from '../../../lib/utils';
 
 const labels = ['Food', 'Computer', 'Furniture'];

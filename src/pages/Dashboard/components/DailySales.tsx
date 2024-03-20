@@ -1,4 +1,4 @@
-import LineChart from '../../../components/Chart/LineChart';
+import LineChart from '../../../components/ui/chart/LineChart';
 
 const labels = ['08:00 AM', '12:00 PM', '03:00 PM', '06:00 PM', '09:00 PM'];
 const data = {

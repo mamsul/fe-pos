@@ -1,4 +1,4 @@
-import AppTitle from '../AppTitle';
+import AppTitle from '../../AppTitle';
 
 export default function HeaderPublic() {
   return (

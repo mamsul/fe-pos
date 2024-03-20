@@ -2,8 +2,8 @@ import { AxiosError } from 'axios';
 import { AlertCircle } from 'lucide-react';
 import { FormEvent, useState } from 'react';
 import { useMutation } from 'react-query';
-import { Button } from '../../../components/Button';
-import { FormInput } from '../../../components/Form/FormInput';
+import { Button } from '../../../components/ui/Button';
+import { FormInput } from '../../../components/ui/form/FormInput';
 import { useAuth } from '../../../hooks/useAuth';
 import { signinAdmin } from '../../../services/authService';
 
@@ -49,13 +49,13 @@ export default function LoginForm() {
       )}
 
       <FormInput
-        placeholder="Type your email: user@gmail.com"
+        placeholder="Type your email"
         type="email"
         required
         onChange={(e) => setEmail(e.target.value)}
       />
       <FormInput
-        placeholder="Type your password: password"
+        placeholder="Type your password"
         type="password"
         required
         onChange={(e) => setPassword(e.target.value)}

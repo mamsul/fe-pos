@@ -1,5 +1,5 @@
-import { useAuth } from '../../hooks/useAuth';
-import AppTitle from '../AppTitle';
+import { useAuth } from '../../../hooks/useAuth';
+import AppTitle from '../../AppTitle';
 import SidebarProtectedMenu from './SidebarProtectedMenu';
 import SidebarSignoutBtn from './SidebarSignoutBtn';
 

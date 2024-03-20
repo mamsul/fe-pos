@@ -1,6 +1,6 @@
 import { Navigate, useLocation, useOutlet } from 'react-router-dom';
 import { useAuth } from '../../hooks/useAuth';
-import HeaderPublic from '../Header/HeaderPublic';
+import HeaderPublic from '../sections/header/HeaderPublic';
 
 export default function PublicLayout() {
   const location = useLocation();

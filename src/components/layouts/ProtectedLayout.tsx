@@ -2,8 +2,8 @@ import { Navigate, useOutlet } from 'react-router-dom';
 import { useAuth } from '../../hooks/useAuth';
 import { cn } from '../../lib/utils';
 import { referenceStore } from '../../store/referenceStore';
-import SidebarMobile from '../Sidebar/SidebarMobile';
-import SidebarProtected from '../Sidebar/SidebarProtected';
+import SidebarMobile from '../sections/sidebar/SidebarMobile';
+import SidebarProtected from '../sections/sidebar/SidebarProtected';
 
 export default function ProtectedLayout() {
   const outlet = useOutlet();
