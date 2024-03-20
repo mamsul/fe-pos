@@ -1,7 +1,7 @@
 import { NavLink, Outlet } from 'react-router-dom';
-import ContentTitle from '../../components/Dashboard/ContentTitle';
-import HeaderProtected from '../../components/Header/HeaderProtected';
-import DashboardWrapper from '../../components/Wrapper/DashboardWrapper';
+import ContentTitle from '../../components/dashboard/ContentTitle';
+import HeaderProtected from '../../components/sections/header/HeaderProtected';
+import DashboardWrapper from '../../components/wrapper/DashboardWrapper';
 import { cn } from '../../lib/utils';
 
 type SettingsProps = {

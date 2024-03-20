@@ -1,9 +1,9 @@
 import { ChevronsRight, Search } from 'lucide-react';
 import { useState } from 'react';
-import ContentTitle from '../../components/Dashboard/ContentTitle';
-import { FormInput } from '../../components/Form/FormInput';
-import HeaderProtected from '../../components/Header/HeaderProtected';
-import DashboardWrapper from '../../components/Wrapper/DashboardWrapper';
+import ContentTitle from '../../components/dashboard/ContentTitle';
+import HeaderProtected from '../../components/sections/header/HeaderProtected';
+import { FormInput } from '../../components/ui/form/FormInput';
+import DashboardWrapper from '../../components/wrapper/DashboardWrapper';
 import { cn } from '../../lib/utils';
 import OrderDetails from './components/OrderDetails/index';
 import OrderProductList from './components/OrderProductList';

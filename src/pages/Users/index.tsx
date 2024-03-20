@@ -1,6 +1,6 @@
-import ContentTitle from '../../components/Dashboard/ContentTitle';
-import HeaderProtected from '../../components/Header/HeaderProtected';
-import DashboardWrapper from '../../components/Wrapper/DashboardWrapper';
+import ContentTitle from '../../components/dashboard/ContentTitle';
+import HeaderProtected from '../../components/sections/header/HeaderProtected';
+import DashboardWrapper from '../../components/wrapper/DashboardWrapper';
 
 export default function Users() {
   return (

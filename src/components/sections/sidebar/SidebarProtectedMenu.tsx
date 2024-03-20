@@ -1,6 +1,6 @@
 import { Link, useLocation } from 'react-router-dom';
-import { cn } from '../../lib/utils';
-import { protectedRoute } from '../../routes';
+import { cn } from '../../../lib/utils';
+import { protectedRoute } from '../../../routes';
 
 type SidebarProtectedMenuProps = {
   isMinimize?: boolean;

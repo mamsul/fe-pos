@@ -1,5 +1,5 @@
 import { BellDot, Menu, MessageSquare } from 'lucide-react';
-import { referenceStore } from '../../store/referenceStore';
+import { referenceStore } from '../../../store/referenceStore';
 
 type HeaderProtectedProps = {
   navigation?: React.ReactNode;

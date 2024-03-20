@@ -1,7 +1,7 @@
 import { useState } from 'react';
-import { useAuth } from '../../hooks/useAuth';
-import { cn } from '../../lib/utils';
-import AppTitle from '../AppTitle';
+import { useAuth } from '../../../hooks/useAuth';
+import { cn } from '../../../lib/utils';
+import AppTitle from '../../AppTitle';
 import SidebarMinimizeBtn from './SidebarMinimizeBtn';
 import SidebarProtectedMenu from './SidebarProtectedMenu';
 import SidebarSignoutBtn from './SidebarSignoutBtn';
