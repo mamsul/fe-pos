@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import ContentTitle from '../../components/dashboard/ContentTitle';
+import ContentTitle from '../../components/ContentTitle';
 import HeaderProtected from '../../components/sections/header/HeaderProtected';
 import DashboardWrapper from '../../components/wrapper/DashboardWrapper';
 import { cn } from '../../lib/utils';

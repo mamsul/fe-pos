@@ -1,6 +1,6 @@
 import { ChevronsRight, Search } from 'lucide-react';
 import { useState } from 'react';
-import ContentTitle from '../../components/dashboard/ContentTitle';
+import ContentTitle from '../../components/ContentTitle';
 import HeaderProtected from '../../components/sections/header/HeaderProtected';
 import { FormInput } from '../../components/ui/form/FormInput';
 import DashboardWrapper from '../../components/wrapper/DashboardWrapper';
