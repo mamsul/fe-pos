@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import ContentTitle from '../../components/ContentTitle';
+import TabNavigation from '../../components/Dashboard/TabNavigation';
 import DashboardWrapper from '../../components/DashboardWrapper';
-import TabNavigation from '../../components/dashboard/TabNavigation';
 import HeaderProtected from '../../components/sections/header/HeaderProtected';
 import Modules from './Modules';
 import RoleModules from './RoleModules';
