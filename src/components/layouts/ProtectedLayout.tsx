@@ -4,11 +4,12 @@ import { cn } from '../../lib/utils';
 import { referenceStore } from '../../store/referenceStore';
 import SidebarMobile from '../sections/sidebar/SidebarMobile';
 import SidebarProtected from '../sections/sidebar/SidebarProtected';
+import Modal from '../ui/Modal';
 
 export default function ProtectedLayout() {
   const outlet = useOutlet();
   const { user } = useAuth();
-  const { showSidebar, handleSidebar } = referenceStore();
+  const { showSidebar, handleSidebar, modal, handleModal } = referenceStore();
 
   if (!user) {
     return <Navigate to="/" />;
@@ -38,6 +39,9 @@ export default function ProtectedLayout() {
 
       {/* Content */}
       <div className="h-screen w-full overflow-auto">{outlet}</div>
+
+      {/* Modal */}
+      {modal.show && <Modal />}
     </div>
   );
 }

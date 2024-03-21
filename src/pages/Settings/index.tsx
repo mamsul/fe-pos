@@ -1,45 +1,35 @@
-import { NavLink, Outlet } from 'react-router-dom';
+import { useState } from 'react';
 import ContentTitle from '../../components/dashboard/ContentTitle';
+import TabNavigation from '../../components/dashboard/TabNavigation';
 import HeaderProtected from '../../components/sections/header/HeaderProtected';
 import DashboardWrapper from '../../components/wrapper/DashboardWrapper';
-import { cn } from '../../lib/utils';
+import Modules from './Modules';
+import RoleModules from './RoleModules';
 
-type SettingsProps = {
-  childRoute: IRoute[];
-};
+export default function Settings() {
+  const [activeTab, setActiveTab] = useState(0);
 
-export default function Settings({ childRoute }: SettingsProps) {
+  const tabs = [
+    { label: 'Modules', content: <Modules /> },
+    { label: 'Role Modules', content: <RoleModules /> },
+  ];
+
   return (
     <>
       <HeaderProtected
         navigation={
-          <ul className="flex h-full w-max items-center overflow-auto">
-            {childRoute.map((route) => (
-              <li key={route.path} className="h-full w-max">
-                <NavLink
-                  to={route.path}
-                  className={({ isActive }) => {
-                    return cn(
-                      'flex h-full items-center px-4',
-                      isActive
-                        ? 'bg-blue-500 font-medium text-white'
-                        : 'text-gray-800',
-                    );
-                  }}>
-                  <span className="text-xs lg:text-sm">{route.name}</span>
-                </NavLink>
-              </li>
-            ))}
-          </ul>
+          <TabNavigation
+            tabs={tabs}
+            activeTab={activeTab}
+            setActiveTab={setActiveTab}
+          />
         }
       />
 
       <DashboardWrapper>
         <ContentTitle label="Settings" />
 
-        <section className="mt-4 border-t border-gray-200 pt-5">
-          <Outlet />
-        </section>
+        <section className="pt-8">{tabs[activeTab].content}</section>
       </DashboardWrapper>
     </>
   );

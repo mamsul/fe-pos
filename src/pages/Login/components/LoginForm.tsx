@@ -2,7 +2,7 @@ import { AxiosError } from 'axios';
 import { AlertCircle } from 'lucide-react';
 import { FormEvent, useState } from 'react';
 import { useMutation } from 'react-query';
-import { Button } from '../../../components/ui/Button';
+import { Button } from '../../../components/ui/button/Button';
 import { FormInput } from '../../../components/ui/form/FormInput';
 import { useAuth } from '../../../hooks/useAuth';
 import { signinAdmin } from '../../../services/authService';
