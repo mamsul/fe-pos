@@ -1,6 +1,6 @@
 import { Printer, X } from 'lucide-react';
 import { useState } from 'react';
-import { Button } from '../../../../components/ui/Button';
+import { Button } from '../../../../components/ui/button/Button';
 import { FormInput } from '../../../../components/ui/form/FormInput';
 import { cn } from '../../../../lib/utils';
 import OrderItems from './OrderItems';
