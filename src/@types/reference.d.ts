@@ -16,11 +16,11 @@ interface ITableColumn {
   }) => JSX.Element;
 }
 
-type HttpMethod = 'GET' | 'POST' | 'PUT' | 'DELETE';
+type HttpMethod = 'GET' | 'POST' | 'PUT' | 'PATCH' | 'DELETE';
 
-type Params = {
+interface IParams {
   [key: string]: any;
-};
+}
 
 interface IApiResponse<T> {
   data: T;
