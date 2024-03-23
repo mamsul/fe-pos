@@ -2,14 +2,14 @@ import Badge from '../../components/ui/Badge';
 
 export const moduleColumns: ITableColumn[] = [
   {
-    dataKey: 'name',
+    dataKey: 'modulName',
     title: 'Name',
     render: ({ dataKey, item }) => <div>{item[dataKey]}</div>,
   },
   {
     dataKey: 'path',
     title: 'Path',
-    render: ({ dataKey, item }) => <div>{item[dataKey]}</div>,
+    render: ({ dataKey, item }) => <div>{item[dataKey] ?? '-'}</div>,
   },
   {
     dataKey: 'status',
@@ -19,7 +19,7 @@ export const moduleColumns: ITableColumn[] = [
         {item[dataKey] ? (
           <Badge label="Active" variant="info" />
         ) : (
-          <Badge label="Active" variant="warning" />
+          <Badge label="Inactive" variant="warning" />
         )}
       </div>
     ),
