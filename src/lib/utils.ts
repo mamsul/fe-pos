@@ -35,7 +35,8 @@ export const removeToken = () => {
 
 export const generateErrorMessage = (error: unknown) => {
   if (error instanceof AxiosError) {
-    return error.response?.data?.message?.error;
+    const errMessage = error.response?.data?.message;
+    return errMessage?.error ?? errMessage;
   } else {
     return 'Failed, something wrong!';
   }

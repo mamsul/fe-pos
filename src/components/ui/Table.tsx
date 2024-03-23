@@ -71,7 +71,7 @@ export default function Table<T>({
         </table>
       </div>
 
-      {error !== null && (
+      {!isLoading && error !== null && (
         <div className="w-max bg-red-400 p-3">
           <p className="text-sm text-white">
             Error: <strong>{generateErrorMessage(error)}</strong>
@@ -79,7 +79,7 @@ export default function Table<T>({
         </div>
       )}
 
-      {data.length < 1 && (
+      {!isLoading && !error && data.length < 1 && (
         <div className="flex w-full items-center justify-center border p-8">
           <span className="text-2xl font-semibold">No data found!</span>
         </div>
