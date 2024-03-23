@@ -1,3 +1,4 @@
+import { AxiosError } from 'axios';
 import clsx, { ClassValue } from 'clsx';
 import Cookies from 'js-cookie';
 import { twMerge } from 'tailwind-merge';
@@ -30,4 +31,12 @@ export const setToken = ({
 export const removeToken = () => {
   Cookies.remove('accessToken');
   Cookies.remove('refreshToken');
+};
+
+export const generateErrorMessage = (error: unknown) => {
+  if (error instanceof AxiosError) {
+    return error.response?.data?.message?.error;
+  } else {
+    return 'Failed, something wrong!';
+  }
 };

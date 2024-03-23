@@ -15,7 +15,7 @@ type BadgeProps = {
 export default function Badge({ variant, label }: BadgeProps) {
   const badgeVariant = {
     success: 'bg-green-500 text-white',
-    warning: 'bg-yellow-400 text-black',
+    warning: 'bg-yellow-400 text-white',
     info: 'bg-blue-400 text-white',
     danger: 'bg-red-400 text-white',
     'outline-info': 'border border-blue-400 text-blue-400',

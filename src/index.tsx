@@ -5,7 +5,13 @@ import App from './App';
 import './assets/styles/index.css';
 import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 
-const queryClient = new QueryClient();
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      refetchOnWindowFocus: false,
+    },
+  },
+});
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement,

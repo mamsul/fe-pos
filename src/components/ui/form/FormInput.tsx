@@ -16,7 +16,7 @@ const FormInput = React.forwardRef<HTMLInputElement, InputFieldProps>(
           type={type}
           className={cn(
             'h-full w-full rounded-lg border bg-white text-sm outline-none transition-all duration-300 focus:border-gray-700 sm:text-base',
-            icon ? 'pl-10 pr-4' : 'px-4',
+            icon ? 'pl-8 pr-4 sm:pl-10' : 'px-4',
             className,
           )}
           ref={ref}
