@@ -100,7 +100,7 @@ export default function ModuleForm({ moduleId }: ModuleFormProps) {
   };
 
   return (
-    <div>
+    <div className="w-[85vw] md:w-[50vw] lg:w-[50vw] xl:w-[40vw]">
       <h2 className="mb-5 text-lg font-semibold md:text-2xl">
         {!moduleId ? 'Add' : 'Edit'} Module
       </h2>

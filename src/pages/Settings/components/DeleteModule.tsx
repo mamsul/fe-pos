@@ -33,7 +33,7 @@ export default function DeleteModule({ id, name }: DeleteModuleProps) {
   };
 
   return (
-    <div>
+    <div className="w-[85vw] md:w-[50vw] lg:w-[40vw] xl:w-[30vw]">
       <h2 className="mb-5 text-lg font-bold md:text-2xl">Confirm Deletion</h2>
 
       <span>
