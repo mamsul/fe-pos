@@ -11,7 +11,7 @@ const getAllModules = async (params: IModuleQuery) => {
 
 const createModule = async (data: IModule) => {
   const payload = {
-    moduleName: data.modulName,
+    moduleName: data.moduleSelect?.value,
     status: data.status,
   } as IModule;
 
@@ -28,7 +28,7 @@ const createModule = async (data: IModule) => {
 
 const updateModule = async (data: IModule) => {
   const payload = {
-    moduleName: data.modulName,
+    moduleName: data.moduleSelect?.value,
     status: data.status,
   } as IModule;
 

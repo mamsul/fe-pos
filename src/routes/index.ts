@@ -1,4 +1,3 @@
-import { LayoutDashboard } from 'lucide-react';
 import Dashboard from '../pages/Dashboard';
 import Login from '../pages/Login';
 import { orderRoutes } from './orderRoutes';
@@ -19,7 +18,6 @@ export const protectedRoute = [
     name: 'Dashboard',
     path: '/dashboard',
     element: Dashboard,
-    icon: LayoutDashboard,
   },
   ...orderRoutes,
   ...userRoutes,

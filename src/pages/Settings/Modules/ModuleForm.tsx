@@ -1,12 +1,14 @@
+import { zodResolver } from '@hookform/resolvers/zod';
 import { useEffect } from 'react';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import { useMutation, useQuery, useQueryClient } from 'react-query';
-import FormError from '../../../components/ui/form/FormError';
+import Select from 'react-tailwindcss-select';
+import FormGroup from '../../../components/ui/form/FormGroup';
 import { FormInput } from '../../../components/ui/form/FormInput';
-import FormLabel from '../../../components/ui/form/FormLabel';
 import { FormSwitch } from '../../../components/ui/form/FormSwitch';
-import { ModuleFormValues, moduleResolver } from '../../../lib/resolver';
+import { ModuleFormValues, moduleSchema } from '../../../lib/resolver';
 import { generateErrorMessage } from '../../../lib/utils';
+import { protectedRoute } from '../../../routes/index';
 import {
   createModule,
   getModuleById,
@@ -22,7 +24,6 @@ type ModuleFormProps = {
 
 export default function ModuleForm({ moduleId }: ModuleFormProps) {
   const { handleModal } = referenceStore();
-
   const queryClient = useQueryClient();
 
   const { mutate: postMutate, isLoading: postLoading } = useMutation({
@@ -48,21 +49,37 @@ export default function ModuleForm({ moduleId }: ModuleFormProps) {
     watch,
     formState: { errors },
   } = useForm<ModuleFormValues>({
-    resolver: moduleResolver,
+    resolver: zodResolver(moduleSchema),
     defaultValues: {
       status: true,
     },
   });
 
+  const routeOptions: IModuleSelect[] = protectedRoute.map((item) => ({
+    value: item.name,
+    label: item.name,
+    path: item.path,
+  }));
+
   useEffect(() => {
     if (data?.data) {
-      setValue('modulName', data?.data?.modulName);
+      const selectedModule = routeOptions.find(
+        (e) => e.value == data.data.modulName,
+      );
+
+      setValue('moduleSelect', selectedModule);
+      setValue('pathName', selectedModule?.path);
       setValue('status', data?.data?.status);
     }
   }, [data]);
 
   const handleCloseModal = () => {
     handleModal({ show: false, content: null });
+  };
+
+  const handleSelectModule = (value: IModuleSelect) => {
+    setValue('moduleSelect', value);
+    setValue('pathName', value?.path);
   };
 
   const onSubmit: SubmitHandler<ModuleFormValues> = (data) => {
@@ -88,38 +105,43 @@ export default function ModuleForm({ moduleId }: ModuleFormProps) {
         {!moduleId ? 'Add' : 'Edit'} Module
       </h2>
 
-      <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-3">
-        <div className="flex flex-col gap-1.5">
-          <FormLabel id="name" label="Module Name" />
-          <FormInput
-            {...register('modulName')}
-            id="name"
-            type="text"
-            wrapperClass="h-11 md:h-11 xl:h-11"
+      <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-4">
+        <FormGroup
+          label="Select Module"
+          labelFor="module"
+          errors={(errors?.moduleSelect?.message as string) ?? null}>
+          <Select
+            primaryColor={'blue'}
+            value={watch('moduleSelect') as IModuleSelect}
+            onChange={(item: any) => handleSelectModule(item)}
+            options={routeOptions}
+            isSearchable
+            placeholder=""
+            classNames={{
+              menuButton: () =>
+                'flex rounded-lg border bg-white text-sm outline-none sm:text-base py-0.5 cursor-pointer',
+            }}
           />
-          {errors?.modulName && (
-            <FormError message={errors?.modulName?.message as string} />
-          )}
-        </div>
+        </FormGroup>
 
-        <div className="flex flex-col gap-1.5">
-          <FormLabel id="name" label="Path/URL" />
+        <FormGroup label="Path" labelFor="path">
           <FormInput
             {...register('pathName')}
-            id="name"
+            id="path"
             type="text"
+            disabled
             wrapperClass="h-11 md:h-11 xl:h-11"
           />
-        </div>
+        </FormGroup>
 
-        <div className="flex flex-col gap-1.5">
-          <FormLabel id="name" label="Status" />
+        <FormGroup label="Status" labelFor="status">
           <FormSwitch
             {...register('status')}
+            id="status"
             label={watch('status') ? 'Active' : 'Inactive'}
             onChange={(e) => setValue('status', e.target.checked)}
           />
-        </div>
+        </FormGroup>
 
         <div className="flex gap-4 pt-8">
           <CancelButton onClick={handleCloseModal} />

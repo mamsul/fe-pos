@@ -18,6 +18,7 @@ export default function Modules() {
   const [search, setSearch] = useState<string>('');
   const debounceSearch = useDebounce(search, 700);
 
+  // Modules fetch query
   const { data, isLoading, isFetching, error } = useQuery({
     queryKey: ['modules', debounceSearch],
     queryFn: () =>
@@ -29,6 +30,7 @@ export default function Modules() {
     keepPreviousData: true,
   });
 
+  // Handling open modal -> form module
   const handleFormModal = (moduleId?: number) => {
     handleModal({
       show: true,
@@ -36,10 +38,12 @@ export default function Modules() {
     });
   };
 
+  // Handling open modal -> delete module
   const handleDeleteModal = (id: number, name: string) => {
     handleModal({ show: true, content: <DeleteModule id={id} name={name} /> });
   };
 
+  // Table columns definition
   const tableColumns: ITableColumn[] = [
     ...moduleColumns,
     {
