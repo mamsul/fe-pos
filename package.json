@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@hookform/resolvers": "^3.3.4",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
@@ -23,6 +24,7 @@
     "react-query": "^3.39.3",
     "react-router-dom": "^6.22.0",
     "react-scripts": "5.0.1",
+    "react-tailwindcss-select": "^1.8.5",
     "tailwind-merge": "^2.2.1",
     "typescript": "^4.9.5",
     "web-vitals": "^2.1.4",
@@ -38,6 +40,7 @@
     "workbox-routing": "^6.6.0",
     "workbox-strategies": "^6.6.0",
     "workbox-streams": "^6.6.0",
+    "zod": "^3.22.4",
     "zustand": "^4.5.1"
   },
   "scripts": {

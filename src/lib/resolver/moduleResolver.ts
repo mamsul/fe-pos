@@ -1,17 +1,13 @@
-import { Resolver } from 'react-hook-form';
+import * as z from 'zod';
 
 export type ModuleFormValues = Pick<IModule, keyof IModule>;
 
-export const moduleResolver: Resolver<ModuleFormValues> = async (values) => {
-  return {
-    values: values.modulName ? values : {},
-    errors: !values.modulName
-      ? {
-          modulName: {
-            type: 'required',
-            message: 'This field is required.',
-          },
-        }
-      : {},
-  };
-};
+export const moduleSchema = z.object({
+  moduleSelect: z.object({
+    label: z.string(),
+    path: z.string(),
+    value: z.string(),
+  }),
+  pathName: z.string().nullable(),
+  status: z.boolean(),
+});
