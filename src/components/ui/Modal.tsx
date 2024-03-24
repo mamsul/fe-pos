@@ -27,7 +27,7 @@ export default function Modal() {
         animate={{ opacity: 1, scale: 1, y: 0 }}
         exit={{ opacity: 0, scale: 0.5, y: -50 }}
         transition={{ type: 'spring', bounce: 0.3 }}>
-        <div className="max-h-[75vh] w-[90vw] overflow-auto rounded-lg bg-white p-2 sm:w-[85vw] lg:w-[50vw]">
+        <div className="max-h-[80vh] w-max overflow-auto rounded-lg bg-white p-2">
           <div className="flex items-center justify-end">
             <IconButton
               icon={<X className="h-5 w-5 group-hover:text-white" />}

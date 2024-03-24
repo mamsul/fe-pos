@@ -6,4 +6,4 @@ export const productRoutes = [
     path: '/dashboard/product',
     element: Product,
   },
-] as IPageRoute[];
+] as IRoute[];

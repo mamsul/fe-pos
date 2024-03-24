@@ -6,4 +6,4 @@ export const orderRoutes = [
     path: '/dashboard/order',
     element: Order,
   },
-] as IPageRoute[];
+] as IRoute[];

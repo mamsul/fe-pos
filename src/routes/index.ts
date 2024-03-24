@@ -11,7 +11,7 @@ export const publicRoute = [
     path: '/',
     element: Login,
   },
-] as IPageRoute[];
+] as IRoute[];
 
 export const protectedRoute = [
   {
@@ -23,4 +23,4 @@ export const protectedRoute = [
   ...userRoutes,
   ...productRoutes,
   ...settingRoutes,
-] as IPageRoute[];
+] as IRoute[];
