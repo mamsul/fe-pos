@@ -6,4 +6,4 @@ export const settingRoutes = [
     path: '/dashboard/settings',
     element: Settings,
   },
-] as IPageRoute[];
+] as IRoute[];

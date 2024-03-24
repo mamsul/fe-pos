@@ -1,7 +1,6 @@
 import {
   BookUser,
   LayoutDashboard,
-  LucideIcon,
   Package,
   SettingsIcon,
   ShoppingBasket,
@@ -37,6 +36,6 @@ const SIDEBAR_MENU = [
     path: '/dashboard/settings',
     icon: SettingsIcon,
   },
-] as { name: string; path: string; icon: LucideIcon }[];
+] as IRoute[];
 
 export { ENV, SIDEBAR_MENU };

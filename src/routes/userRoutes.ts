@@ -6,4 +6,4 @@ export const userRoutes = [
     path: '/dashboard/users',
     element: Users,
   },
-] as IPageRoute[];
+] as IRoute[];
